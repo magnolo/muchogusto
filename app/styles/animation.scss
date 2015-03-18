@@ -1,0 +1,119 @@
+.anim {
+  
+}
+/*.article.ng-hide-remove, .article.ng-hide-remove.ng-hide-remove-active, .article.ng-enter,*/
+.anim.ng-enter,
+ {
+  animation: fromRight 0.5s both;
+  -webkit-animation: fromRight 0.5s both;
+}
+/*.article.ng-enter-stagger*/
+.anim.ng-stagger,
+.anim-bottom.ng-stagger,
+ {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+/*.article.ng-leave*/
+.anim.ng-leave,
+ {
+  animation: toRight 0.5s both;
+  -webkit-animation: toRight 0.5s both;
+  position: fixed;
+  top: 255px;
+  width: 100%;
+  left: 0;
+}
+.anim-bottom.ng-enter,
+ {
+  animation: fromBottom 0.5s both;
+  -webkit-animation: fromBottom 0.5s both;
+}
+.anim-bottom.ng-leave,
+ {
+  position: absolute !important;
+  left: 215px !important;
+  z-index: 1 !important;
+  animation: toBottom 0.5s both;
+  -webkit-animation: toBottom 0.5s both;
+}
+@keyframes fromRight {
+  from {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes fromRight {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+@keyframes toRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes toRight {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+  }
+}
+@keyframes fromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes fromBottom {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+@keyframes toBottom {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+@-webkit-keyframes toBottom {
+  from {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+  }
+}

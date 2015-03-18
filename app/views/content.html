@@ -1,0 +1,24 @@
+<div id="main-menue" ng-class="{'full': centered == true}">
+  <ul>
+    <li>
+      <a class="button" id="about_button" ui-sref="main.content({id:'about'})"></a>
+    </li>
+    <li>
+      <a class="button" id="team_button" ui-sref="main.content({id:'team'})"></a>
+    </li>
+    <li>
+      <a class="button" id="photo_button" ui-sref="main.content({id:'photo'})"></a>
+    </li>
+    <li>
+      <a class="button" id="live_button" ui-sref="main.content({id:'live'})"></a>
+    </li>
+    <li>
+      <a class="button" id="cd_button" ui-sref="main.content({id:'cd'})"></a>
+    </li>
+    <li>
+      <a class="button" id="trailer_button" ui-sref="main.content({id:'trailer'})"></a>
+    </li>
+
+  </ul>
+</div>
+<div ui-view="content" class="anim-bottom" id="main-content" ng-if="!centered"></div>

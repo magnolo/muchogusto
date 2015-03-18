@@ -1,0 +1,106 @@
+<!doctype html>
+<html class="no-js" ng-app="muchoApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>MUCHGUSTO - una operà tragi-erótico</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <META NAME="Keywords" CONTENT="Mucho, gusto, muchogusto Villach, muchogusto, muchogusto.at, Carintischer Sommer, ">
+  <META NAME="Description" CONTENT="MUCHOGUSTO ist eine Oper in 2 Akten ohne Pause. Die Gesamtdauer beläuft sich auf 75 Minuten. Es gibt eine Sprech-/Gesangsrolle (Muchogusto) und 2 Nebengesangsrollen (Las Hermanas Sister), wobei der Hauptdarsteller eine Mischung aus Erzähler und Protagonist verkörpert. Alle weiteren Personen werden rein visuell dargestellt. Weite Teile der Aufführung werden außerdem rein musikalisch gestaltet werden">
+  <META NAME="Copyright" CONTENT="zbsp.at">
+  <META NAME="Author" CONTENT="Manfred Walder">
+  <META NAME="Subject" CONTENT="Musik, Oper, Jazz, Surfrock">
+  <META NAME="Language" CONTENT="DE">
+  <META NAME="title" CONTENT="MUCHGUSTO - una operà tragi-erótico">
+
+  <meta property="og:title" content="MUCHGUSTO - una operà tragi-erótico">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="http://www.zbsp.at/_/MUCHOGUSTO/images/thumb.jpg">
+  <meta property="og:url" content="http://www.muchogusto.at">
+  <meta property="og:description" content="MUCHOGUSTO ist eine Oper in 2 Akten ohne Pause. Die Gesamtdauer beläuft sich auf 75 Minuten. Es gibt eine Sprech-/Gesangsrolle (Muchogusto) und 2 Nebengesangsrollen (Las Hermanas Sister), wobei der Hauptdarsteller eine Mischung aus Erzähler und Protagonist verkörpert. Alle weiteren Personen werden rein visuell dargestellt. Weite Teile der Aufführung werden außerdem rein musikalisch gestaltet werden">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300,300italic,600italic,600' rel='stylesheet' type='text/css'>
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/angular-video-background/dist/vidBg.css" />
+  <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+
+<body ng-controller="IndexCtrl">
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <vid-bg resources="resources1.video" poster="resources1.poster" full-screen="fullScreen" muted="muted" z-index="zIndex" ng-show="resources1.show"></vid-bg>
+  <vid-bg resources="resources2.video" poster="resources2.poster" full-screen="fullScreen" muted="muted" z-index="zIndex" ng-show="resources1.show"></vid-bg>
+  <vid-bg resources="resources3.video" poster="resources3.poster" full-screen="fullScreen" muted="muted" z-index="zIndex" ng-show="resources1.show"></vid-bg>
+
+
+  <div id="tile"></div>
+  <div id="header">
+    <div id="top_menu" ng-class="{'out': main != false}">
+      <div id="top_menu_intern" class="top-menue">
+        <ul>
+          <li><a ui-sref="main.content({type:'oper', id:'about'})">Die Oper</a></li>
+          <li><a ui-sref="main.content({type:'band', id:'about'})">In Concert</a></li>
+          <li><a ui-sref="main({type:'oper'})">Contact</a></li>
+          <li><a ui-sref="main({type:'oper'})">Press</a></li>
+          <li><a ui-sref="main({type:'oper'})">Sponsors</a></li>
+        </ul>
+      </div>
+      <div id="top_menu_social" class="top-menue">
+        <ul>
+          <li style="width:120px;">
+            <a ng-class="{'active': lng== 'de'}">deutsch</a> / <a ng-class="{'active': lng== 'en'}">english</a>
+          </li>
+          <!--<li>
+            <div class="addthis_toolbox addthis_default_style " style="">
+              <a class="addthis_button_compact" style="">share</a>
+            </div>
+            <script src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f7b79f323b018a7" type="text/javascript"></script>
+          </li>-->
+        </ul>
+        <!-- AddThis Button END -->
+        <!--<ul>
+                          <li><a href="http://www.facebook.com/pages/Muchogusto-Una-%C3%93pera-tragi-er%C3%B3tico/374824549228664" target="_blank"><div id="fb_button"></div></a></li>
+                          <li><a href="mailto:office@muchogusto.at"><div id="mail_button"></div></a></li>
+                          <!--<li><div id="share_button"><a class="addthis_button_compact"></a></div></li>
+                      </ul>-->
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div ui-view="" class="anim" style="height:100%"></div>
+  </div>
+
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+  <script src="bower_components/angular-video-background/dist/vidBg.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/about.js"></script>
+  <script src="scripts/controllers/index.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>
