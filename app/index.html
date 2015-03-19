@@ -35,13 +35,10 @@
 <body ng-controller="IndexCtrl">
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-  <vid-bg resources="resources1.video" poster="resources1.poster" full-screen="fullScreen" muted="muted" z-index="zIndex" ng-show="resources1.show"></vid-bg>
-  <vid-bg resources="resources2.video" poster="resources2.poster" full-screen="fullScreen" muted="muted" z-index="zIndex" ng-show="resources1.show"></vid-bg>
-  <vid-bg resources="resources3.video" poster="resources3.poster" full-screen="fullScreen" muted="muted" z-index="zIndex" ng-show="resources1.show"></vid-bg>
-
-
+  <![endif]-->
+  <vid-bg resources="resources1.video" poster="resources1.poster" full-screen="fullScreen" muted="muted" z-index="zIndex" pause-play="resources1.show"></vid-bg>
+  <vid-bg resources="resources2.video" poster="resources2.poster" full-screen="fullScreen" muted="muted" z-index="zIndex" ng-show="resources2.show" pause-play="resources2.show"></vid-bg>
+  <vid-bg resources="resources3.video" poster="resources3.poster" full-screen="fullScreen" muted="muted" z-index="zIndex" ng-show="resources3.show" pause-play="resources3.show"></vid-bg>
   <div id="tile"></div>
   <div id="header">
     <div id="top_menu" ng-class="{'out': main != false}">
@@ -56,7 +53,7 @@
       </div>
       <div id="top_menu_social" class="top-menue">
         <ul>
-          <li style="width:120px;">
+          <li style="width:130px;">
             <a ng-class="{'active': lng== 'de'}">deutsch</a> / <a ng-class="{'active': lng== 'en'}">english</a>
           </li>
           <!--<li>

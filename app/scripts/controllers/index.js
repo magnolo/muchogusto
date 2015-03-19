@@ -9,36 +9,36 @@
  */
 /*jshint unused:false*/
 angular.module('muchoApp')
-  .controller('IndexCtrl', function($scope, $rootScope) {
+  .controller('IndexCtrl', function($scope, $rootScope, $timeout) {
     $scope.resources1 = {
       video: [
         'videos/slowhander1.webm',
-        '*.ogv',
-        '*.mp4',
-        '*.swf'
+        'videos/slowhander1.ogv',
+        'videos/slowhander1.mp4',
+        'videos/slowhander1.swf'
       ],
-      poster: 'http://placehold.it/2000&text=you%20may%20want%20to%20have%20a%20poster',
+      poster: 'images/snapshot.png',
       show: true
     };
     $scope.resources2 = {
       video: [
         'videos/slowhander2.webm',
-        '*.ogv',
-        '*.mp4',
-        '*.swf'
+        'videos/slowhander2.ogv',
+        'videos/slowhander2.mp4',
+        'videos/slowhander2.swf'
       ],
-      poster: 'http://placehold.it/2000&text=you%20may%20want%20to%20have%20a%20poster',
-      show: true
+      poster: 'images/snapshot2.png',
+      show: false
     };
     $scope.resources3 = {
       video: [
         'videos/slowhander3.webm',
-        '*.ogv',
-        '*.mp4',
-        '*.swf'
+        'videos/slowhander3.ogv',
+        'videos/slowhander3.mp4',
+        'videos/slowhander3.swf'
       ],
-      poster: 'http://placehold.it/2000&text=you%20may%20want%20to%20have%20a%20poster',
-      show: true
+      poster: 'images/snapshot2.png',
+      show: false
     };
     $scope.fullScreen = true;
     $scope.muted = true;
@@ -46,16 +46,26 @@ angular.module('muchoApp')
     $scope.centered = true;
     $scope.main = false;
     $scope.lng = 'de';
+
     $rootScope.$on('$stateChangeSuccess',
       function(event, toState, toParams) {
         if (toState.name === 'main') {
+          $scope.resources1.show = false;
+          $scope.resources2.show = true;
           $scope.centered = true;
           $scope.main = false;
+          $timeout(function() {
+            $scope.resources3.show = true;
+          }, 990);
         } else if (toState.name === 'home') {
           $scope.main = true;
+          $scope.resources3.show = false;
+          $scope.resources2.show = false;
+          $scope.resources1.show = true;
         } else {
           $scope.centered = false;
           $scope.main = false;
+          $scope.resources3.show = true;
         }
       });
 
